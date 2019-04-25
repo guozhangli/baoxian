@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+   <settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+<!-- 包别名机制 -->
+	<typeAliases>
+	<!-- 相当于把包名省略，以后再访问这个包下的类时，可以直接写类名即可。
+	配置完别名机制后，只能写类的简名，写全名会报错。 -->
+		<package name="cn.wy.insurance.pojo"/>
+	</typeAliases>
+	  
+</configuration>

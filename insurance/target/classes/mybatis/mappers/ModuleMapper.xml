@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 注意，namespace的名字要和对应的接口的全路径名一致 -->
+<mapper namespace="cn.wy.insurance.mapper.ModuleMapper">
+	
+	<!--如果单表是单表查询，不涉及关联对象的查询，可以开启驼峰映射规则，在Mybatis的核心配置
+	文件里来开启。
+	强调：如果想做关联查询，比如一对一或一对多查询，还是需要用resultMap来配置 -->
+	<select id="findAllModule" resultType="Module">
+	  select * from module_p
+	</select>
+<!-- 2.新增保存
+如果有字段为null,setting null for parameter #5
+我们可以根据数字来进行排错 -->
+<insert id="insert" parameterType="Module">
+insert into module_p (module_id,parent_id,name,ctype,create_time,
+update_time,state)
+values(#{moduleId},#{parentId},#{name},#{ctype},#{createTime},
+#{updateTime},#{state})
+</insert>
+</mapper> 
